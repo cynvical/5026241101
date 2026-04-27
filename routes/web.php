@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DosenController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\PegawaiController;
 Route::get('/', function () {
     return view('welcome');
 });
@@ -52,3 +53,4 @@ Route::get('/', function () {
 Route::get('/blog', [BlogController::class, 'home']);
 Route::get('/blog/tentang', [BlogController::class, 'tentang']);
 Route::get('/blog/kontak', [BlogController::class, 'kontak']);
+Route::get('/formulir', [PegawaiController::class, 'formulir']);
