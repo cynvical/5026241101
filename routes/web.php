@@ -43,3 +43,11 @@ Route::get('p5', function () {
 	return view('pertemuan5');
 });
 
+Route::get('/', function () {
+	return view('welcome');
+});
+
+// route blog
+Route::get('/blog', 'BlogController@home');
+Route::get('/blog/tentang', 'BlogController@tentang');
+Route::get('/blog/kontak', 'BlogController@kontak');
