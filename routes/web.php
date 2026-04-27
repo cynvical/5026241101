@@ -14,12 +14,32 @@ Route::get('blog', function () {
 	return view('blog');
 });
 
-Route::get('p5', function () {
-	return view('pertemuan5');
-});
+
 
 Route::get('dosen', [DosenController::class, 'index']);
 
 Route::get('biodata', function () {
 	return view('biodata');
 });
+
+Route::get('p1', function () {
+	return view('intro');
+});
+
+Route::get('p2', function () {
+	return view('news');
+});
+
+
+Route::get('p3', function () {
+	return view('responsive');
+});
+
+Route::get('p4', function () {
+	return view('5026241101');
+});
+
+Route::get('p5', function () {
+	return view('pertemuan5');
+});
+
