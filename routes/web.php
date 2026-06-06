@@ -5,6 +5,7 @@ use App\Http\Controllers\DosenController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\PegawaiDBController;
+use App\Http\Controllers\PenggarisController;
 Route::get('/', function () {
     return view('welcome');
 });
@@ -66,3 +67,11 @@ Route::get('/pegawaiedit{id}',[PegawaiDBController::class, 'edit']);
 Route::post('/pegawaiupdate',[PegawaiDBController::class, 'update']);
 Route::get('/pegawaihapus{id}',[PegawaiDBController::class, 'hapus']);
 Route::get('/pegawaicari', [PegawaiDBController::class, 'cari']);
+
+Route::get('/PR1',[PenggarisController::class, 'indexpenggaris']);
+Route::get('/addpenggaris',[PenggarisController::class, 'addpenggaris']);
+Route::post('/storepenggaris',[PenggarisController::class, 'storepenggaris']);
+Route::get('/editpenggaris{id}',[PenggarisController::class, 'editpenggaris']);
+Route::post('/updatepenggaris',[PenggarisController::class, 'updatepenggaris']);
+Route::get('/deletepenggaris{id}',[PenggarisController::class, 'deletepenggaris']);
+Route::get('/searchpenggaris', [PenggarisController::class, 'searchpenggaris']);

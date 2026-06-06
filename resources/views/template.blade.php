@@ -54,7 +54,7 @@
             <nav id="navmenu" class="navmenu">
                 <ul>
                     <li><a href="/pegawai">Pegawai</a></li>
-                    <li><a href="">PR 1</a></li>
+                    <li><a href="/PR1">PR 1</a></li>
                     <li><a href="">PR 2</a></li>
                     <li><a href="">Pertemuan 15</a></li>
                     <li><a href="">EAS</a></li>
