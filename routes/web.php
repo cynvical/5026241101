@@ -6,6 +6,9 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\PegawaiDBController;
 use App\Http\Controllers\PenggarisController;
+use App\Http\Controllers\SiswaController;
+use App\Http\Controllers\KeranjangController;
+use App\Http\Controllers\NilaiController;
 Route::get('/', function () {
     return view('welcome');
 });
@@ -27,7 +30,7 @@ Route::get('biodata', function () {
 });
 
 Route::get('p1', function () {
-	return view('intro');
+	return view('tugas routing.intro');
 });
 
 Route::get('p2', function () {
@@ -75,3 +78,25 @@ Route::get('/editpenggaris{id}',[PenggarisController::class, 'editpenggaris']);
 Route::post('/updatepenggaris',[PenggarisController::class, 'updatepenggaris']);
 Route::get('/deletepenggaris{id}',[PenggarisController::class, 'deletepenggaris']);
 Route::get('/searchpenggaris', [PenggarisController::class, 'searchpenggaris']);
+
+
+Route::get('/siswa', [SiswaController::class, 'index'])->name('siswa.index');
+Route::get('/siswa/create', [SiswaController::class, 'create'])->name('siswa.create');
+Route::post('/siswa', [SiswaController::class, 'store'])->name('siswa.store');
+Route::get('/siswa/{nrp}/edit', [SiswaController::class, 'edit'])->name('siswa.edit');
+Route::put('/siswa/{nrp}', [SiswaController::class, 'update'])->name('siswa.update');
+Route::delete('/siswa/{nrp}', [SiswaController::class, 'destroy'])->name('siswa.destroy');
+
+Route::get('/nilaikuliah', [NilaiController::class, 'index'])->name('nilaikuliah.index');
+Route::get('/nilaikuliah/create', [NilaiController::class, 'create'])->name('nilaikuliah.create');
+Route::post('/nilaikuliah', [NilaiController::class, 'store'])->name('nilaikuliah.store');
+Route::get('/nilaikuliah/{id}/edit', [NilaiController::class, 'edit'])->name('nilaikuliah.edit');
+Route::put('/nilaikuliah/{id}', [NilaiController::class, 'update'])->name('nilaikuliah.update');
+Route::delete('/nilaikuliah/{id}', [NilaiController::class, 'destroy'])->name('nilaikuliah.destroy');
+
+Route::get('/keranjangbelanja', [KeranjangController::class, 'index'])->name('keranjangbelanja.index');
+Route::get('/keranjangbelanja/create', [KeranjangController::class, 'create'])->name('keranjangbelanja.create');
+Route::post('/keranjangbelanja', [KeranjangController::class, 'store'])->name('keranjangbelanja.store');
+Route::get('/keranjangbelanja/{id}/edit', [KeranjangController::class, 'edit'])->name('keranjangbelanja.edit');
+Route::put('/keranjangbelanja/{id}', [KeranjangController::class, 'update'])->name('keranjangbelanja.update');
+Route::delete('/keranjangbelanja/{id}', [KeranjangController::class, 'destroy'])->name('keranjangbelanja.destroy');
