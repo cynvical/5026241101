@@ -9,9 +9,12 @@ use App\Http\Controllers\PenggarisController;
 use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\KeranjangController;
 use App\Http\Controllers\NilaiController;
+<<<<<<< HEAD
 use App\Http\Controllers\BukuController;
 use App\Http\Controllers\NPController;
 
+=======
+>>>>>>> e38656589f7bb8296d832128a830962478aa500e
 Route::get('/', function () {
     return view('welcome');
 });
