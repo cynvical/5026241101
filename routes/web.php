@@ -9,6 +9,9 @@ use App\Http\Controllers\PenggarisController;
 use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\KeranjangController;
 use App\Http\Controllers\NilaiController;
+use App\Http\Controllers\BukuController;
+use App\Http\Controllers\NPController;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -100,3 +103,15 @@ Route::post('/keranjangbelanja', [KeranjangController::class, 'store'])->name('k
 Route::get('/keranjangbelanja/{id}/edit', [KeranjangController::class, 'edit'])->name('keranjangbelanja.edit');
 Route::put('/keranjangbelanja/{id}', [KeranjangController::class, 'update'])->name('keranjangbelanja.update');
 Route::delete('/keranjangbelanja/{id}', [KeranjangController::class, 'destroy'])->name('keranjangbelanja.destroy');
+
+
+//latihan
+Route::get('/perpustakaan', [BukuController::class, 'index']);
+Route::post('/perpustakaanpinjam/{id}', [BukuController::class, 'pinjam']);
+
+Route::get('/eas', [NPController::class, 'index'])->name('nilai_peserta.index');
+Route::get('/nilai_peserta/create', [NPController::class, 'create'])->name('nilai_peserta.create');
+Route::post('/eas', [NPController::class, 'store'])->name('nilai_peserta.store');
+Route::get('/nilai_peserta/{id}/edit', [NPController::class, 'edit'])->name('nilai_peserta.edit');
+Route::put('/nilai_peserta/{id}', [NPController::class, 'update'])->name('nilai_peserta.update');
+Route::delete('/nilai_peserta/{id}', [NPController::class, 'destroy'])->name('nilai_peserta.destroy');
